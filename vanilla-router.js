@@ -76,7 +76,7 @@ export class VanillaRouter {
       this._handleNewURL({ url, event });
     });
 
-    // Handle back button
+    // Handle back/forward buttons
     addEventListener("popstate", (event) => {
       this._handleNewURL({ url: new URL(location.href), replace: true });
     });
