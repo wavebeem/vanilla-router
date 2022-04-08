@@ -14,7 +14,7 @@ function createState({ url, routePattern, pathParams }) {
     pathname: url.pathname,
     search: url.search,
     hash: url.hash,
-    searchParams: Object.fromEntries(new URLSearchParams(url.search)),
+    searchParams: Object.fromEntries(url.searchParams),
     pathParams,
   };
 }
