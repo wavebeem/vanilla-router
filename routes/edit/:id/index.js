@@ -7,6 +7,9 @@ export function render({ router, match }) {
 
     <h2>searchParams</h2>
     <pre class="searchParams"></pre>
+
+    <!-- Relative paths work just fine! -->
+    <a href="..">Back</a>
   `;
   router.renderRoot.querySelector(".id").textContent = id;
   router.renderRoot.querySelector(".searchParams").textContent = JSON.stringify(

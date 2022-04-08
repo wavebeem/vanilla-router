@@ -1,3 +1,5 @@
+const html = String.raw;
+
 export function render({ router, match }) {
-  router.renderRoot.textContent = "Home page";
+  router.renderRoot.innerHTML = html`<h1>Home page</h1>`;
 }

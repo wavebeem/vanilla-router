@@ -65,10 +65,13 @@ export class VanillaRouter {
   }
 
   start() {
+    // Listen for anchor tag clicks
     this.linkRoot.addEventListener("click", (event) => {
-      // TODO: Ignore Cmd-Click/Ctrl-Click, or links with target="_blank"
+      if (event.metaKey || event.ctrlKey) return;
+      if (event.target.target) return;
       const anchor = this._findAnchor(event.target);
       if (!anchor) return;
+      // Calculate full URL from potentially relative URL
       const url = new URL(anchor.href, location.href);
       this._handleNewURL({ url, event });
     });
@@ -78,6 +81,7 @@ export class VanillaRouter {
       this._handleNewURL({ url: new URL(location.href), replace: true });
     });
 
+    // Initialize router with current URL
     this._handleNewURL({ url: new URL(location.href), replace: true });
   }
 

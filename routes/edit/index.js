@@ -14,7 +14,11 @@ export function render({ router, match }) {
         <p><a href="/edit/2/?type=short">Edit item #2 (type=short)</a></p>
       </li>
       <li>
-        <p><a href="/edit/3/">Edit item #3</a></p>
+        <p>
+          <a href="/edit/3/?foo=bar&quux=baz&snoop&dup=1&dup=2"
+            >Edit item #3 (foo=bar&quux=baz&snoop&dup=1&dup=2)</a
+          >
+        </p>
       </li>
     </ul>
   `;
